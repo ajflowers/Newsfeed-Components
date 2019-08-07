@@ -174,6 +174,19 @@ const data = [
       }
     });
 
+    //stretch: close button
+    const articleClose = document.createElement("span");
+    articleClose.textContent = "hide";
+    articleClose.className = "close";
+    article.appendChild(articleClose);
+
+    articleClose.addEventListener("click", (e) => {
+      article.classList.add("article-closed");
+    })
+
+    
+
+
     //return the article
     return article;
 
