@@ -35,7 +35,15 @@ let menuItems = [
 */
 
 const menuButton = document.querySelector(".menu-button");
-const wherever = document.querySelector(".articles");
+
+let wherever = "";
+if(Math.random() < 0.5) {
+  wherever = ".articles";
+} else {
+  wherever = ".header";
+};
+const menuSpot = document.querySelector(wherever);
+
 
 
 //menu builder function
@@ -66,5 +74,5 @@ const buildMenu = function (array) {
 
 };
 
-wherever.appendChild(buildMenu(menuItems));
+menuSpot.appendChild(buildMenu(menuItems));
 

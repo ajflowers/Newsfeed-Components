@@ -176,7 +176,7 @@ const data = [
 
     //stretch: close button
     const articleClose = document.createElement("span");
-    articleClose.textContent = "hide";
+    articleClose.textContent = "remove";
     articleClose.className = "close";
     article.appendChild(articleClose);
 
