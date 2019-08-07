@@ -112,3 +112,65 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new artible
 
 */
+
+
+// data.forEach(story => {
+//   storyBox.appendChild(editor(story.title, story.date, story.firstParagraph, story.secondParagraph, story.thirdParagraph));
+// })
+
+//prevents null errors from code running before all resources load 
+window.addEventListener("load", function(event){
+
+  //all code below runs when load event triggered
+
+  //retrieve articles div
+  const articles = document.querySelector(".articles");
+  console.log(articles);
+  
+  //component-building function
+  const editor = function (object) {
+
+    // elements
+    const article = document.createElement("div");;
+    const articleTitle = document.createElement("h2");
+    const articleDate = document.createElement("p");
+    const articleP1 = document.createElement("p");
+    const articleP2 = document.createElement("p");
+    const articleP3 = document.createElement("p");
+    const articleBtn = document.createElement("span");
+
+    // element layout
+    article.appendChild(articleTitle);
+    article.appendChild(articleDate);
+    article.appendChild(articleP1);
+    article.appendChild(articleP2);
+    article.appendChild(articleP3);
+    article.appendChild(articleBtn);
+
+    //classes
+
+    articleDate.className = "date";
+    articleBtn.className = "expandButton";
+
+    //content
+    articleTitle.textContent = object.title;
+    articleDate.textContent = object.date;
+    articleP1.textContent = object.firstParagraph;
+    articleP2.textContent = object.secondParagraph;
+    articleP3.textContent = object.thirdParagraph;
+
+    //return the article
+    return article;
+
+
+  };
+
+  //append content from data
+  data.forEach(story => {
+    articles.appendChild(editor(story));
+  })
+
+  //console.log(editor(data[0]));
+
+
+});
