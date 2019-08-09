@@ -37,9 +37,9 @@ const data = [
         mewing kittens Remus Lupin. Palominos scarlet train black robes, Metamorphimagus Niffler dead easy second bedroom. Padma
         and Parvati Sorting Hat Minister of Magic blue turban remember my last.`,
 
-    thirdParagraph: `Toad-like smile Flourish and Blotts he knew I’d come back Quidditch World Cup. Fat Lady baubles banana fritters fairy lights 
-        Petrificus Totalus. So thirsty, deluminator firs’ years follow me 12 inches of parchment. Head Boy start-of-term banquet Cleansweep Seven 
-        roaring lion hat. Unicorn blood crossbow mars is bright tonight, feast Norwegian Ridgeback. Come seek us where our voices sound, we cannot 
+    thirdParagraph: `Toad-like smile Flourish and Blotts he knew I’d come back Quidditch World Cup. Fat Lady baubles banana fritters fairy lights
+        Petrificus Totalus. So thirsty, deluminator firs’ years follow me 12 inches of parchment. Head Boy start-of-term banquet Cleansweep Seven
+        roaring lion hat. Unicorn blood crossbow mars is bright tonight, feast Norwegian Ridgeback. Come seek us where our voices sound, we cannot
         sing above the ground, Ginny Weasley bright red. Fanged frisbees, phoenix tears good clean match.`
   },
   {
@@ -66,8 +66,8 @@ const data = [
         consectetur adipiscing elit. Nidoran Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nidorino Lorem ipsum dolor
         sit amet, consectetur adipiscing elit. Nidoking Lorem ipsum`,
 
-    thirdParagraph: `Gotta catch 'em all Horsea gym Ninjask Absol Sinnoh Poliwag. Gotta catch 'em all Youngster wants to fight Soda Pop Floatzel 
-        Leech Life Seismitoad Ariados. Earthquake Pokemon Glitch City Tail Whip Skitty Ekans Dialga. Ut aliquip ex ea commodo consequat James 
+    thirdParagraph: `Gotta catch 'em all Horsea gym Ninjask Absol Sinnoh Poliwag. Gotta catch 'em all Youngster wants to fight Soda Pop Floatzel
+        Leech Life Seismitoad Ariados. Earthquake Pokemon Glitch City Tail Whip Skitty Ekans Dialga. Ut aliquip ex ea commodo consequat James
         Castform Lotad the power that's inside Burnt Berry Makuhita. Ghost Ariados Corphish Dusclops Golbat Gligar Zweilous.`
   },
   {
@@ -89,15 +89,15 @@ const data = [
   {
     title: "BUILD WEEK: Lambda Students Tell All!",
     date: "August 2, 2019",
-    firstParagraph: "Zombies reversus ab inferno, nam malum cerebro. De carne animata corpora quaeritis. Summus sit​​, morbo vel maleficia? De Apocalypsi undead dictum mauris. Hi mortuis soulless creaturas, imo monstra adventus vultus comedat cerebella viventium. Qui offenderit rapto, terribilem incessu. The voodoo sacerdos suscitat mortuos comedere carnem. Search for solum oculi eorum defunctis cerebro. Nescio an Undead zombies. Sicut malus movie horror.", 
+    firstParagraph: "Zombies reversus ab inferno, nam malum cerebro. De carne animata corpora quaeritis. Summus sit​​, morbo vel maleficia? De Apocalypsi undead dictum mauris. Hi mortuis soulless creaturas, imo monstra adventus vultus comedat cerebella viventium. Qui offenderit rapto, terribilem incessu. The voodoo sacerdos suscitat mortuos comedere carnem. Search for solum oculi eorum defunctis cerebro. Nescio an Undead zombies. Sicut malus movie horror.",
     secondParagraph: "Cum horribilem resurgere de sepulcris creaturis, sicut de iride et serpens. Pestilentia, ipsa screams. Pestilentia est haec ambulabat mortuos. Sicut malus voodoo. Aenean a dolor vulnerum aperire accedunt, mortui iam vivam. Qui tardius moveri, sed in magna copia sint terribiles legionis. Alii missing oculis aliorum sicut serpere crabs nostram. Putridi odores aere implent.",
     thirdParagraph: "Tremor est vivos magna. Expansis ulnis video missing carnem armis caeruleum in locis. A morbo amarus in auras. Nihil horum sagittis tincidunt, gelida portenta. The unleashed virus est, et iam mortui ambulabunt super terram. Souless mortuum oculos attonitos back zombies. An hoc incipere Clairvius Narcisse, an ante? Is bello mundi z?"
   },
-  
+
 ];
 
-/* Step 1: Create a function that creates a component. You will want your component to look like the template below: 
-  
+/* Step 1: Create a function that creates a component. You will want your component to look like the template below:
+
   <div class="article">
     <h2>{title of the article}</h2>
     <p class="date">{date of the article}</p>
@@ -122,83 +122,101 @@ const data = [
 */
 
 
-//prevents null errors from code running before all resources load 
-// window.addEventListener("load", function(event){
 
-  //all code below runs when load event triggered
+//retrieve articles div
+const articles = document.querySelector(".articles");
+//console.log(articles);
 
-  //retrieve articles div
-  const articles = document.querySelectorAll(".articles");
-  //console.log(articles); 
-  
-  //component-building function
-  const editor = function (object) {
+//component-building function
+const editor = function (object) {
 
-    // elements
-    const article = document.createElement("div");;
-    const articleTitle = document.createElement("h2");
-    const articleDate = document.createElement("p");
-    const articleP1 = document.createElement("p");
-    const articleP2 = document.createElement("p");
-    const articleP3 = document.createElement("p");
-    const articleBtn = document.createElement("span");
+  // elements
+  const article = document.createElement("div");;
+  const articleTitle = document.createElement("h2");
+  const articleDate = document.createElement("p");
+  const articleP1 = document.createElement("p");
+  const articleP2 = document.createElement("p");
+  const articleP3 = document.createElement("p");
+  const articleBtn = document.createElement("span");
 
-    // element layout
-    article.appendChild(articleTitle);
-    article.appendChild(articleDate);
-    article.appendChild(articleP1);
-    article.appendChild(articleP2);
-    article.appendChild(articleP3);
-    article.appendChild(articleBtn);
+  // element layout
+  article.appendChild(articleTitle);
+  article.appendChild(articleDate);
+  article.appendChild(articleP1);
+  article.appendChild(articleP2);
+  article.appendChild(articleP3);
+  article.appendChild(articleBtn);
 
-    //classes
-    article.className = "article";
-    articleDate.className = "date";
-    articleBtn.className = "expandButton";
+  //classes
+  article.className = "article";
+  articleDate.className = "date";
+  articleBtn.className = "expandButton";
 
-    //content
-    articleTitle.textContent = object.title;
-    articleDate.textContent = object.date;
-    articleP1.textContent = object.firstParagraph;
-    articleP2.textContent = object.secondParagraph;
-    articleP3.textContent = object.thirdParagraph;
-    articleBtn.textContent = "Read more";
+  //content
+  articleTitle.textContent = object.title;
+  articleDate.textContent = object.date;
+  articleP1.textContent = object.firstParagraph;
+  articleP2.textContent = object.secondParagraph;
+  articleP3.textContent = object.thirdParagraph;
+  articleBtn.textContent = "Read more";
 
-    //event listener
-    articleBtn.addEventListener("click", (e) => {
-      article.classList.toggle("article-open");
-      if (article.classList.contains("article-open")) {
-        articleBtn.textContent = "collapse";
-      } else {
-        articleBtn.textContent = "Read more";
-      }
-    });
+  //event listener
+  articleBtn.addEventListener("click", (e) => {
+    article.classList.toggle("article-open");
+    if (article.classList.contains("article-open")) {
+      articleBtn.textContent = "collapse";
+    } else {
+      articleBtn.textContent = "Read more";
+    }
+  });
 
-    //stretch: close button
-    const articleClose = document.createElement("span");
-    articleClose.textContent = "remove";
-    articleClose.className = "close";
-    article.appendChild(articleClose);
+  //stretch: close button
+  const articleClose = document.createElement("span");
+  articleClose.textContent = "remove";
+  articleClose.className = "close";
+  article.appendChild(articleClose);
 
-    articleClose.addEventListener("click", (e) => {
-      article.classList.add("article-closed");
-    })
-
-    
-
-
-    //return the article
-    return article;
-
-
-  };
-
-  //append content from data
-  data.forEach(story => {
-    articles[0].prepend(editor(story));
+  articleClose.addEventListener("click", (e) => {
+    // article.classList.add("article-closed");
+    article.style.display = "none";
   })
 
-  //console.log(editor(data[0]));
 
 
-// });
+
+  //return the article
+  return article;
+
+
+};
+
+// ACHEIVEMENT: FEEDBACK GREATLY APPRECIATED!
+// now refactored with 100% more array.Prototype.map()
+// and other goodies: only one reflow in browser!
+
+//mapping articles from data 
+let articlesArray = data.map(article => editor(article));
+console.log(articlesArray);
+
+//create doc fragment
+let articlesBlob = document.createDocumentFragment();
+
+//add docs to fragment
+articlesArray.forEach(article => {
+  articlesBlob.prepend(article);
+});
+
+console.log(articlesBlob);
+
+articles.appendChild(articlesBlob);
+
+
+// append content from data
+// data.forEach(story => {
+//   articles.prepend(editor(story)); //oh no, 5 reflows D:
+// })
+
+//console.log(editor(data[0]));
+
+
+

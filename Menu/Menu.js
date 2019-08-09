@@ -36,7 +36,7 @@ let menuItems = [
 
 const menuButton = document.querySelector(".menu-button");
 
-const menuSpot = document.querySelector(".articles");
+const menuSpot = document.querySelector("body");
 
 
 
